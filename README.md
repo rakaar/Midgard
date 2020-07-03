@@ -40,7 +40,7 @@ Create a new virtual environment by `virtualenv` and install all the dependencie
 
 Run the server by: `python3 main.py`
 
-In the Github repos, go to `Settings > Webhooks`. Add `https://midgard.iit-techambit.in/github/[repo name as in whitelist.json]` as Webhook. In the Secret Key section, use `GITHUB_SECRET_TOKEN` specified in `conf.env`.
+In the Github repos, go to `Settings > Webhooks`. Add `https://midgard.iit-techambit.in/github/[repo name as in whitelist.json]` as Webhook. In the Secret Key section, use `SECRET_TOKEN_GH` specified in `conf.env`.
 
 You can redeploy your projects at will by opening the Midgard dashboard, `https://midgard.iit-techambit.in/dashboard` by logging in using the admin pin saved in `conf.env`.
 

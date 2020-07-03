@@ -17,7 +17,7 @@ import slackbot
 load_dotenv("conf.env")
 procs = None
 app = Flask(__name__)
-app.config["GITHUB_SECRET_TOKEN"] = os.environ.get("GITHUB_SECRET_TOKEN")
+app.config["SECRET_TOKEN_GH"] = os.environ.get("SECRET_TOKEN_GH")
 app.config["ADMIN_PIN"] = os.environ.get("MIDGARD_ADMIN_PIN")
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
@@ -31,7 +31,7 @@ def getRequest(repo):
         if sha_name != "sha1":
             valid = False
         else:
-            mac = hmac.new(app.config["GITHUB_SECRET_TOKEN"].encode(), msg=raw_data, digestmod=hashlib.sha1)
+            mac = hmac.new(app.config["SECRET_TOKEN_GH"].encode(), msg=raw_data, digestmod=hashlib.sha1)
             if not hmac.compare_digest(mac.hexdigest(), signature):
                 valid = False
     except:
